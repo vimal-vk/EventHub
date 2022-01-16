@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/header.ejs') %>
+
+<body>
+  <%- include('./partials/navbar.ejs') %>
+  
+  <div class="user-section">
+    <div class="user-container">
+      <h1 style="display: inline-block;">Hello, <%= data.user_details.first_name %> </h1>
+      <form action="/signOut" method="post">
+        <button type="submit" class="signout-button">Sign Out</button>
+      </form>
+    </div>
+    <div class="event-section">
+      <h2>Posted Events</h2>
+      <% if(data.my_event_details && data['my_event_details'].length>0){ %>
+        <form method="post" action="/singleevent">
+          <div class="event-container">
+            <% for(var i=0;i<data.my_event_details.length;i++){ %>
+              <button class="event-head" name="eventValue" value=<%=data.my_event_details[i].event_id %> type="submit">
+                <div class="event-photo">
+                  <img src=<%='images/' +data.my_event_details[i].event_logo %> alt="">
+                </div>
+                <div class="event-desc">
+                  <h3>
+                    <%= data.my_event_details[i].event_name %>
+                  </h3>
+                  <p>
+                    <%= data.my_event_details[i].event_company %>
+                  </p>
+                </div>
+              </button>
+            <% } %>
+          </div>
+        </form>
+      <% } %>
+      <% if(data['my_event_details'].length==0){ %>
+        <div class="message-container" style="background-color: rgb(166, 166, 240);">
+          <h3 class="message">You have not created any Events yet. Start by clicking on Create</h3>
+        </div>
+      <% } %>
+    </div>
+  </div>
+</body>
+<script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+  integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+
+</html>

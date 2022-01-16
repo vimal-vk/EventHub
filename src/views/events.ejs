@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/header.ejs') %>
+
+<body>
+  <%- include('./partials/navbar.ejs') %>
+  
+  <div class="event-section">
+    <h2>Upcoming Events</h2>
+    <% if(data.event_details && data['event_details'].length>0){ %>
+      <form method="post" action="/singleevent">
+        <div class="event-container">
+          <% for(var i=0;i<data.event_details.length;i++){ %> 
+            <button class="event-head" name="eventValue" value=<%= data.event_details[i].event_id %> type="submit">
+              <div class="event-photo">
+                <img src= <%='images/'+data.event_details[i].event_logo %>  alt="">
+              </div>
+              <div class="event-desc">
+                <h3><%= data.event_details[i].event_name %> </h3>
+                <p> <%= data.event_details[i].event_company %>  </p>
+              </div>
+            </button>
+          <% } %>   
+        </div>
+      </form>
+    <% } %> 
+    <% if(data.event_details && data['event_details'].length==0){ %>
+      <div class="message-container" style="background-color: rgb(238, 238, 79);">
+        <h3 class="message">There are no upcoming events. You may check after some time</h3>
+      </div>
+    <% } %>
+  </div>
+</body>
+
+</html>

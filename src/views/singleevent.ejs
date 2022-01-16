@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/header.ejs') %>
+
+<body>
+  <%- include('./partials/navbar.ejs') %>
+
+  <div class="event-photo-container">
+    <img src=<%= "images/"+data.event_details[0].event_logo %> alt="">
+  </div>
+  <div class="full-event-container">
+    <h1><%= data.event_details[0].event_name %></h1>
+    <p class="event-details">from <i class="highlight-detail"><%= data.event_details[0].event_company %></i></p>
+    <p class="event-details"><i class="event-details fas fa-map-marker-alt"></i><i
+        class="highlight-detail"><%= data.event_details[0].event_city %></i></p>
+    <p class="event-details">Event starts from <i class="highlight-detail"><%= JSON.stringify(data.event_details[0].event_start_date).slice(1,11).split("-").reverse().join("-") %> </i> to <i
+        class="highlight-detail"> <%= JSON.stringify(data.event_details[0].event_end_date).slice(1,11).split("-").reverse().join("-") %></i> </p>
+    <p class="event-details">Registration Fee : Rs. <i class="highlight-detail"><%= data.event_details[0].registration_fee %></i> /- </p>
+    <p class="event-details"><%= data.event_details[0].event_desc %></p>
+    <p class="event-details"><i class="event-details fas fa-envelope"></i> <i
+        class="highlight-detail"><%= data.event_details[0].organiser_mail_id %></i> </p>
+    <p class="event-details"><i class="event-details fas fa-phone-alt"></i><i class="highlight-detail"><%= data.event_details[0].organiser_phone_no %></i>
+    </p>
+    <p class="event-details"><i class="event-details fas fa-globe-americas"></i> <a href=<%= data.event_details[0].event_website %>
+        target="_blank"><i class="highlight-detail"><%= data.event_details[0].event_website %></i></a> </p>
+  </div>
+  <div class="contest-container">
+    <div class="contest-full-container">
+      <% for(var i=0;i<data.contest_details.length;i++){ %> 
+      <div>
+      <p class="event-details inline"><%= data.contest_details[i].contest_name %></p>
+      <button class="expand-button button-display" id=<%= (i*3)+1 %> onclick="expandButton(this)"> + </button>
+      <button class="compress-button hide" id=<%= (i*3)+2 %>  onclick="compressButton(this)"> -- </button>
+      <div class="contest-detail-container hide" id=<%= (i*3)+3 %> >
+        <p class="event-details">Mode : <i class="highlight-detail"><%= data.contest_details[i].contest_mode %></i></p>
+        <p class="event-details"><i class="event-details fas fa-map-marker-alt"></i><i
+            class="highlight-detail"><%= data.contest_details[i].venue %></i></p>
+        <p class="event-details"><%= data.contest_details[i].contest_desc %></p>
+        <p class="event-details">Event starts from <i class="highlight-detail"> <%= JSON.stringify(data.contest_details[i].contest_start_date).slice(1,11).split("-").reverse().join("-")+" "+JSON.stringify(data.contest_details[i].contest_start_date).slice(12,17) %> </i> to <i
+            class="highlight-detail"> <%= JSON.stringify(data.contest_details[i].contest_end_date).slice(1,11).split("-").reverse().join("-")+" "+JSON.stringify(data.contest_details[i].contest_end_date).slice(12,17) %></i> </p>
+        <p class="event-details">Registration Fee : Rs. <i class="highlight-detail"><%= data.contest_details[i].contest_fee %></i> /- </p>
+        <p class="event-details"><i class="event-details fas fa-envelope"></i> <i
+            class="highlight-detail"><%= data.contest_details[i].contest_mail_id %></i> </p>
+        <p class="event-details"><i class="event-details fas fa-phone-alt"></i><i class="highlight-detail"><%= data.contest_details[i].contest_mobile_no %></i></p>
+        <p class="event-details"><i class="event-details fas fa-globe-americas"></i> <a href=<%= data.contest_details[i].contest_registration_link %>
+            target="_blank"><i class="highlight-detail"><%= data.contest_details[i].contest_registration_link %></i></a> </p>
+      </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

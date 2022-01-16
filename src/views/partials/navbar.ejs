@@ -1,0 +1,31 @@
+<nav>
+  <div class="navbar-container">
+    <div class="navbar-brand">
+      <img class="logo" src="images/EventHub.png" alt="Eventz Hub">
+    </div>
+    <div class="navbar-toggle">
+      <button>
+        <i class="fas fa-sliders-h"></i>
+      </button>
+    </div>
+    <div class="navbar-item-container">
+      <ul class="navbar-items">
+        <li class="nav-links"><a href="/"><i class="fas fa-laptop-house"></i> Home</a></li>
+        <li class="nav-links"><a href="/events"><i class="far fa-calendar-alt"></i> Events</a></li>
+        <li class="nav-links"><a href=""><i class="fab fa-fort-awesome"></i> About</a></li>
+      </ul>
+    </div>
+    <div class="navbar-user-container">
+      <ul class="navbar-user">
+        <% if(user==-1){ %>
+          <li class="nav-links"><a href="/login"><i class="fas fa-sign-in-alt"></i>Login</a></li>
+          <li class="nav-links"><a href="/register"><i class="fas fa-user-plus"></i>Register</a></li>
+        <% } %>
+        <% if(user!=-1) { %>
+          <li class="nav-links"><a href="/user"><i class="fas fa-user"></i> User</a></li>
+          <li class="nav-links"><a href="/create"><i class="fas fa-calendar-plus"></i> Create</a></li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>

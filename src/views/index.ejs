@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/header.ejs') %>
+
+<body> 
+  <%- include('./partials/navbar.ejs') %>
+  
+  <div class="home-section">
+    <div class="quotes-container">
+      <h1>Eat, Sleep, Compete and Repeat</h1>
+      <h3>Let's get started</h3>
+      <div>
+        <button class="home-button"> <a href="/events">Events</a></button>
+        <% if(user==-1){ %>
+          <button class="home-button"> <a href="/login">Login</a></button>
+        <% } %> 
+        <% if(user!=-1){ %>
+          <button class="home-button"> <a href="/create">Create</a></button>
+        <% } %> 
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="images/boy.png" alt="">
+    </div>
+  </div>
+  <div class="carousel-section">
+  </div>
+</body>
+</html>

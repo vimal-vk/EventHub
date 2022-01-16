@@ -1,0 +1,113 @@
+* {
+  color: white;
+  font-family: "EB Garamond", serif;
+}
+img {
+  background: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+.home-section,
+.register-section,
+.login-section {
+  background: linear-gradient(to bottom, #afcc33, #c79338); /*#add8e6; #aec6cf*/
+  height: 400px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 30px;
+}
+
+.image-container {
+  text-align: center;
+}
+
+.image-container img {
+  height: 400px;
+}
+
+.quotes-container {
+  margin: auto;
+  text-align: left;
+  margin-top: 50px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 800;
+}
+
+h1 {
+  font-family: "Padauk", sans-serif;
+  font-style: italic;
+  font-size: 40px;
+}
+
+.quotes-container h1 {
+  margin-bottom: 5px;
+}
+
+.quotes-container h3 {
+  margin-top: 10px;
+  padding-left: 10px;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.home-button {
+  position: absolute;
+  margin: 15px 10px 10px 20px;
+  padding: 6px 12px 6px 12px;
+  background: #7254fada;
+  font-weight: 600;
+  font-size: 16px;
+  border: 1px solid white;
+}
+
+.home-button:hover {
+  border: 3px solid white;
+  transform: rotate(5deg);
+}
+
+.home-button:nth-child(2) {
+  left: 250px;
+}
+
+.user-container {
+  width: 100%;
+  height: 200px;
+  background: rgb(184, 182, 182);
+}
+
+.user-container h1 {
+  font-size: 60px;
+  margin: auto;
+  padding-top: 60px;
+  margin-left: 40px;
+}
+
+.signout-button {
+  background-color: rgb(209, 92, 92);
+  border: solid 1px white;
+  padding: 8px;
+  float: right;
+  margin: 0 auto;
+  margin-right: 40px;
+}
+.signout-button:hover {
+  background-color: rgb(209, 92, 92);
+}
+
+.event-section {
+  margin: 20px;
+}
+
+.event-section h2 {
+  font-size: 30px;
+  color: black;
+}

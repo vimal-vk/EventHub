@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/header.ejs') %>
+
+<body>
+  <%- include('./partials/navbar.ejs') %>
+
+  <% if(data['status']==true){ %>
+    <div class="message-container" style="background-color: rgb(118, 230, 118);">
+      <h3 class="message">Event Created Successfully. You can check it in your user profile</h3>
+    </div>
+  <% } %>
+
+  <form action="/create" method="post" enctype="multipart/form-data">
+    <div id="additional-event">
+    <h2 class="event-header">Event Details</h2>
+    <div class="register-section">
+      <div class="form-container">
+        <label class="event-label" for="eventName">Name of the Event </label>
+        <input class="event-box" type="text" name="eventName">
+        <label class="event-label" for="cityName">City Name </label>
+        <input class="event-box" type="text" name="cityName">
+        <label class="event-label" for="eventStartDate">Event Start Date </label>
+        <input class="event-box" type="date" name="eventStartDate">
+        <label class="event-label" for="eventMailId">Organiser Mail Id </label>
+        <input class="event-box" type="email" name="eventMailId">
+        <label class="event-label" for="eventLink">Event Website Link</label>
+        <input class="event-box" type="url" name="eventLink">
+        <label class="event-label" for="eventLogo">Event Logo or Poster</label>  
+        <input class="event-box no-border" name="eventLogo" type="file" accept=".jpg , .jpeg , .png">
+      </div>
+      <div class="form-container">
+        <label class="event-label" for="collegeName">Name of the College/Company </label>
+        <input class="event-box" type="text" name="collegeName">
+        <label class="event-label" for="registrationFee">Registration Fee </label>
+        <input class="event-box" type="number" name="registrationFee">
+        <label class="event-label" for="eventEndDate">Event End Date </label>
+        <input class="event-box" type="date" name="eventEndDate">
+        <label class="event-label" for="eventPhoneNo">Organiser Contact Number </label>
+        <input class="event-box" type="number" name="eventPhoneNo">
+        <label class="event-label" for="eventJoin">Who can Join </label>
+        <label class="event-checkbox" name="student">Student
+          <input type="checkbox" name="student">
+          <span class="checkmark"></span>
+        </label>
+        <label class="event-checkbox" name="professional">Professional
+          <input type="checkbox" name="professional">
+          <span class="checkmark"></span>
+        </label>
+        <label class="event-label" for="eventDesc">Tell about Your Event (about 100 words) </label>
+        <textarea class="event-box" name="eventDesc" cols="10" rows="2"></textarea>
+      </div>
+    </div>
+    <h2 class="event-header">Contest - 1 Details</h2>
+    <div class="register-section">
+      <div class="form-container">
+        <label class="event-label" for="contestName1">Name of the Contest </label>
+        <input class="event-box" type="text" name="contestName1">
+        <label class="event-label" for="contestVenue1">Venue </label>
+        <input class="event-box" type="text" name="contestVenue1">
+        <label class="event-label" for="contestStartDate1">Contest Start Date & Time</label>
+        <input class="event-box" type="datetime-local" name="contestStartDate1">
+        <label class="event-label" for="contestLink1">Contest Registration Link</label>
+        <input class="event-box" type="url" name="contestLink1">
+        <label class="event-label" for="contestMailId1">Contest Organiser Mail Id </label>
+        <input class="event-box" type="email" name="contestMailId1">
+      </div>
+      <div class="form-container">
+        <label class="event-label" for="contestMode1">Mode Online/Offline</label>
+        <input class="event-box" type="text" name="contestMode1">
+        <label class="event-label" for="contestFee1">Contest Fee </label>
+        <input class="event-box" type="number" name="contestFee1">
+        <label class="event-label" for="contestEndDate1">Contest End Date & Time</label>
+        <input class="event-box" type="datetime-local" name="contestEndDate1">
+        <label class="event-label" for="contestPhoneNo1">Contest Organiser Contact Number </label>
+        <input class="event-box" type="number" name="contestPhoneNo1">
+        <label class="event-label" for="contestDesc1">Tell about this Contest (about 100 words) </label>
+        <textarea class="event-box" name="contestDesc1" cols="10" rows="2"></textarea>
+      </div>
+    </div>
+    </div>
+    <div class="button-container">
+      <button class="input-box inline" id="submit" type="submit">Submit</button>
+    </div>
+  </form>
+  <button class="input-box inline new-event" onclick="newContest()">Add Another Event</button>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

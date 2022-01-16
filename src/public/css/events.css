@@ -1,0 +1,122 @@
+.event-container {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  margin: 20px;
+}
+
+.event-head {
+  display: grid;
+  height: 300px;
+  grid-template-rows: 60% 40%;
+  grid-template-columns: 100%;
+  margin: 40px;
+  border: 2px solid #7254fada;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: unset;
+  padding: 0px;
+  align-items: center;
+}
+
+.event-desc {
+  background-color: #f29f1a;
+  height: 120px;
+  border-radius: 0px 0px 12px 12px;
+  padding-left: 10px;
+}
+
+.event-photo {
+  height: 180px;
+}
+
+.event-photo img {
+  border-radius: 12px 12px 0px 0px;
+  height: 100%;
+  width: 100%;
+}
+
+.event-head:hover {
+  box-shadow: 0px 10px 50px 0px #7254fada;
+}
+
+.event-photo-container {
+  float: right;
+  width: 40%;
+  height: 400px;
+  margin: 50px;
+}
+
+.event-photo-container img {
+  height: 100%;
+  width: 100%;
+}
+
+.full-event-container {
+  margin: 50px;
+  color: black;
+}
+
+.event-details {
+  color: black;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.highlight-detail {
+  color: #f29f1a;
+}
+
+.fa-phone-alt,
+.fa-envelope,
+.fa-globe-americas,
+.fa-map-marker-alt {
+  padding: 0;
+  padding-right: 10px;
+}
+
+.contest-container {
+  margin: 0 auto;
+  display: block;
+  width: 90%;
+  padding: 20px;
+}
+
+.contest-detail-container,
+.contest-full-container {
+  padding: 5px 0px 5px 20px;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.compress-button,
+.expand-button {
+  float: right;
+  border: none;
+  background: transparent;
+  color: black;
+  font-size: 30px;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+.hide {
+  display: none;
+}
+
+.container-display {
+  display: block;
+}
+
+.button-display {
+  display: inline;
+}
+
+.compress-button:hover,
+.expand-button:hover {
+  color: #f29f1a;
+  background: transparent;
+}
